@@ -8,18 +8,8 @@ fieldset, img { border: none; }
 
 body
 {
-	background: #f6ebd2 url(../images/background_repeat.jpg) repeat left top;
-	color: #22160b;
+	background: #353535;
+	color: #f1f1f1;
 	font-family: helvetica, arial sans-serif;
 	font-size: 12px;
-	padding-top: 20px;
-}
-
-h2
-{
-	background: transparent url(../images/outforasmoke.jpg) no-repeat left top;
-	height: 595px;
-	margin: 0 auto;
-	text-indent: -300em;
-	width: 847px;
 }
