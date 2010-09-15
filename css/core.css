@@ -1,0 +1,25 @@
+/*- General ------------------------------------------------------------------------------------------*/
+* { margin: 0px; padding: 0px; }
+hr { display: none; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+section, header, nav, footer { display: block; }
+li { list-style: none inside;}
+fieldset, img { border: none; }
+
+body
+{
+	background: #f6ebd2 url(../images/background_repeat.jpg) repeat left top;
+	color: #22160b;
+	font-family: helvetica, arial sans-serif;
+	font-size: 12px;
+	padding-top: 20px;
+}
+
+h2
+{
+	background: transparent url(../images/outforasmoke.jpg) no-repeat left top;
+	height: 595px;
+	margin: 0 auto;
+	text-indent: -300em;
+	width: 847px;
+}
