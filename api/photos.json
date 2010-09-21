@@ -1,0 +1,64 @@
+{
+    "photos": [
+        {
+            "set": "childhood",
+            "url": "photos/001.jpg"
+        },
+        {
+            "set": "childhood",
+            "url": "photos/002.jpg"
+        },
+        {
+            "set": "childhood",
+            "url": "photos/003.jpg"
+        },
+        {
+            "set": "music",
+            "url": "photos/004.jpg"
+        },
+        {
+            "set": "music",
+            "url": "photos/005.jpg"
+        },
+        {
+            "set": "music",
+            "url": "photos/006.jpg"
+        },
+        {
+            "set": "portraits",
+            "url": "photos/007.jpg"
+        },
+        {
+            "set": "portraits",
+            "url": "photos/008.jpg"
+        },
+        {
+            "set": "portraits",
+            "url": "photos/009.jpg"
+        },
+        {
+            "set": "travel",
+            "url": "photos/010.jpg"
+        },
+        {
+            "set": "travel",
+            "url": "photos/011.jpg"
+        },
+        {
+            "set": "travel",
+            "url": "photos/012.jpg"
+        },
+        {
+            "set": "working",
+            "url": "photos/013.jpg"
+        },
+        {
+            "set": "working",
+            "url": "photos/014.jpg"
+        },
+        {
+            "set": "working",
+            "url": "photos/015.jpg"
+        }
+    ]
+}

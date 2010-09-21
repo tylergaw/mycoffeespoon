@@ -1,0 +1,19 @@
+{
+    "sets": [
+        {
+            "name": "childhood"
+        },
+        {
+            "name": "music"
+        },
+        {
+            "name": "portraits"
+        },
+        {
+            "name": "travel"
+        },
+        {
+            "name": "working"
+        }
+    ]
+}
