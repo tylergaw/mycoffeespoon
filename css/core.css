@@ -56,7 +56,12 @@ header
 		{
 			opacity: 1;
 		}
-
+		
+		nav ul
+		{
+			display: none;
+		}
+		
 		nav li
 		{
 			display: inline-block;
@@ -111,6 +116,7 @@ header
 		-moz-box-shadow: rgba(255, 255, 255, 0.1) 1px 1px 3px;
 		-webkit-box-shadow: rgba(255, 255, 255, 0.1) 1px 1px 3px;
 		box-shadow: rgba(255, 255, 255, 0.1) 1px 1px 3px;
+		min-height: 400px;
 		padding: 6px;
 		position: relative;
 		text-align: center;
@@ -125,7 +131,7 @@ header
 	{
 		border-bottom: 1px solid #000;
 		border-right: 1px solid #000;
-		display: block;
+		display: none;
 		margin: 0 auto;
 	}
 
@@ -137,12 +143,12 @@ header
 		-moz-border-radius: 8px;
 		-webkit-border-radius: 8px;
 		border-radius: 8px;
-		display: none;
+		display: block;
 		height: 32px;
-		left: 50%;
+		left: 48%;
 		opacity: 0.7;
 		position: absolute;
-		top: 24%;
+		top: 30%;
 		width: 32px;
 		z-index: 998;
 	}
