@@ -91,7 +91,8 @@ header
 			text-shadow: #000 1px 1px 1px;
 		}
 		
-			nav a:hover
+			nav a:hover,
+			nav li.active a
 			{
 				color: #fff;
 				text-decoration: underline;
@@ -108,7 +109,7 @@ header
 
 	#content-frame
 	{
-		background-color: rgba(255, 255, 255, 0.015);
+		background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 320, from(rgba(255, 255, 255, 0.07)), to(rgba(255, 255, 255, 0.01)));
 		border: 1px solid #000;
 		-moz-border-radius: 6px;
 		-webkit-border-radius: 6px;
@@ -120,18 +121,18 @@ header
 		padding: 6px;
 		position: relative;
 		text-align: center;
+		-webkit-transition: height 0.3s ease-out;
 	}
 	
 		#content-frame:hover a
 		{
-			opacity: 0.5;
+			opacity: 0.2;
 		}
 	
 	#content-frame img
 	{
 		border-bottom: 1px solid #000;
 		border-right: 1px solid #000;
-		display: none;
 		margin: 0 auto;
 	}
 
@@ -183,3 +184,10 @@ header
 	{
 		right: 6px;
 	}
+
+/*- Photo Container ----------------------------------------------------------------------------------*/
+	
+.hidden-photo-container
+{
+	display: none;
+}

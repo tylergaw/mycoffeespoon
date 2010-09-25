@@ -36,14 +36,18 @@ var CP = function ()
 			);
 			
 			$('header:eq(0) ul').prepend(html.join('')).show();
-			
 			internal.address.init();
+		},
+		
+		setActive: function (itemName)
+		{
+			var parent = $('a[rel="' + itemName + '"]').parent();
+			parent.addClass('active').siblings().removeClass('active');
 		}
 	};
 	
 	// Using jquery.address, handle hashchanges
-	internal.address = {
-		
+	internal.address = {	
 		init: function ()
 		{
 			var changeWasCalled = false;
@@ -53,6 +57,7 @@ var CP = function ()
 				function (e)
 				{			
 					changeWasCalled = true;
+					internal.navigation.setActive(e.pathNames[0]);
 					internal.loadSection(e);
 				}
 			);
@@ -90,11 +95,168 @@ var CP = function ()
 		}
 	};
 	
+	// Load the section provided from the URL hash
 	internal.loadSection = function (sectionInfo)
 	{
-		var sectionName = sectionInfo.pathNames[0];
-		console.log(photos[sectionName][0]);
+		var sectionName = sectionInfo.pathNames[0] || null,
+			photoSet    = null,
+			container   = null,
+			imgHtml     = [];
+		
+		if (sectionName)
+		{
+			photoSet = photos[sectionName];
+			internal.slideshow.enabled = true;
+			internal.slideshow.index   = 0;
+			internal.slideshow.set     = sectionName;
+			
+			// Create a hidden container for the images
+			if ($('#container-' + sectionName).length === 0)
+			{
+				container = $('<div />', {
+					'class': 'hidden-photo-container',
+					'id': 'container-' + sectionName,
+				});
+
+				$('body').append(container);
+
+				// Append an image element for each photo in the set
+				$.each(photoSet, 
+					function (i, photo)
+					{
+						imgHtml.push('<img src="' + photo + '">');
+					}
+				);
+				container.append(imgHtml.join(''));
+			}
+			
+			internal.slideshow.change();
+		}
+		else
+		{
+			
+		}
 	};
+	
+	// spinning loader graphic
+	internal.loader = {
+		show: function ()
+		{
+			$('#loading-indicator').show();
+		},
+		
+		hide: function ()
+		{
+			$('#loading-indicator').hide();
+		}
+	};
+	
+	// Image slideshow
+	internal.slideshow = {
+		enabled: false,
+		index: 0,
+		set: null,
+		
+		init: function ()
+		{
+			var slideshow = this;
+			this.controls.init();
+			
+			$(document).keyup(
+				function (e)
+				{
+					switch (e.keyCode)
+					{
+					case 37:
+						slideshow.prev();
+						break;
+					case 39:
+						slideshow.next();
+						break;
+					};
+				}
+			);
+		},
+		
+		change: function ()
+		{
+			var img = photos[this.set][this.index];
+			internal.loader.show();
+			
+			$('#slideshow-image').animate({opacity: 0}, 200, 
+				function ()
+				{
+					$(this).attr('src', img);
+					internal.loader.hide();
+				}
+			).animate({opacity: 1}, 200);
+		},
+		
+		next: function ()
+		{
+			var newIndex;
+			
+			if (this.enabled)
+			{
+				internal.loader.show();
+				
+				if (this.index === photos[this.set].length - 1)
+				{
+					newIndex = 0;
+				}
+				else
+				{
+					newIndex = this.index + 1;
+				}
+            	
+				this.index = newIndex;
+				this.change();
+			}
+			return false;
+		},
+		
+		prev: function ()
+		{
+			var newIndex;
+			
+			if (this.enabled)
+			{
+				internal.loader.show();
+				
+				if (this.index === 0)
+				{
+					newIndex = photos[this.set].length - 1;
+				}
+				else
+				{
+					newIndex = this.index - 1;
+				}
+				
+				this.index = newIndex;
+				this.change();
+			}
+			return false;
+		},
+		
+		controls: {
+			
+			init: function ()
+			{
+				$('#prev-btn').click($.proxy(internal.slideshow, 'prev'));
+				$('#next-btn').click($.proxy(internal.slideshow, 'next'));
+			},
+			
+			hide: function ()
+			{
+				$('#transport-controls').hide();
+			},
+			
+			show: function ()
+			{
+				$('#transport-controls').show();
+			}
+		}
+	}
 	
 	// Take an array of photo object, sort them by their set name
 	// then create multiple objects grouped by the name
@@ -104,15 +266,15 @@ var CP = function ()
 	{
 		var sorted = photos.sort(function (a, b)
 			{
-				var A = a.set.toLowerCase(),
-					B = b.set.toLowerCase(),
+				var setA = a.set.toLowerCase(),
+					setB = b.set.toLowerCase(),
 					sort = 0;
 				
-				if (A < B)
+				if (setA < setB)
 				{
 					sort = -1;
 				}
-				else if (A > B)
+				else if (setA > setB)
 				{
 					sort = 1;
 				}
@@ -143,6 +305,12 @@ var CP = function ()
 				
 				org[p.set].push(p.url);
 				
+				// Sort the last set on the way out
+				if (i === sorted.length - 1)
+				{
+					org[p.set].sort();
+				}
+				
 				prevSet = p.set;
 			}
 		);
@@ -167,7 +335,7 @@ var CP = function ()
 	};
 	
 	this.init = function ()
-	{
+	{		
 		this.loadData(this.url('sets'),
 			function (data)
 			{
@@ -177,7 +345,6 @@ var CP = function ()
 					function (data)
 					{
 						photos = internal.organizePhotos(data.photos);
-						
 						$this.allDataLoaded();
 					}
 				);
@@ -189,6 +356,7 @@ var CP = function ()
 	this.allDataLoaded = function ()
 	{
 		internal.navigation.init();
+		internal.slideshow.init();
 	}
 	
 	// Wrapper method for resource Ajax requests
