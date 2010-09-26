@@ -130,8 +130,6 @@ var CP = function ()
 				$.each(photoSet, 
 					function (i, photo)
 					{
-						var img = new Image();
-						img.src = photo;
 						imgHtml.push('<img src="' + photo + '">');
 					}
 				);
