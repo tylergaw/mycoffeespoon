@@ -297,7 +297,7 @@ var CP = function ()
 	};
 	
 	// Base URL for all API data
-	this.apiBaseUrl = '../api/';
+	this.apiBaseUrl = 'api/';
 	
 	// Retrieve an absolute URL to an API resource
 	// @param STRING urlName - The name of the resourse
