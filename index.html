@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
 <head>
 	<meta charset="utf-8">
-	<!--[if IE]><![endif]-->
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>My Coffee Spoon</title>
@@ -27,12 +31,64 @@
 			
 			<span id="loading-indicator"></span>
 			
-			<div id="transport-controls">
+			<section id="slideshow">
 				<a id="prev-btn">prev</a> 
 				<a id="next-btn">next</a>
-			</div>
+				
+				<img src="" alt="" id="slideshow-image">
+			</section>
 			
-			<img src="" alt="" id="slideshow-image">
+			<section id="about">
+				<div id="about-photo">
+					<img src="images/about_photo.jpg" alt="portrait of Kamni Kahn" width="480" height="480">
+					
+					<ul id="credits">
+						<li>credits:</li>
+						<li>art by J. M&ouml;rtsell</li>
+						<li>photo by J. Ray</li>
+						<li>site by <a href="http://twitter.com/thegaw">T. Gaw</a></li>
+					</ul>
+				</div>
+				<div id="about-content">
+					<section id="quotes">
+						<blockquote>
+							<p>
+								I have measured out my life with coffee spoons
+							</p>
+							<em>T.S. Eliot</em>
+						</blockquote>
+						<blockquote>
+							<p>
+								I count my thoughts with coffee spoons
+							</p>
+							<em>Two Gallants</em>
+						</blockquote>
+						<blockquote>
+							<p>
+								You are my coffee spoon
+							</p>
+							<em>Cold War Kids</em>
+						</blockquote>
+					</section>
+					<section id="bio">
+						<p>
+							Born in Pakistan, raised in NYC and Swedish at heart, the photographer captures her world with film. With her work, she hopes to bridge the rice fields of her motherland with the ------- and the snow-covered terrain of her adopted home.
+						</p>
+						<p>
+							She is often inspired by smiling children and men with guitars.  
+                    	</p>
+						<p>
+							When she isn't shooting, the photographer is making a pot of coconut curry, defending V.S. Naipaul's writing or planning yet another trip. Her goal in life is visit Kamnik, Slovenia.
+                    	</p>
+						<p>
+							The photographer's work has appeared on <a href="http://www.brooklynvegan.com/">BrooklynVegan</a>, <a href="http://www.theswedebeat.com/">The Swede Beat</a> and <a href="http://www.debaser.se/">Debaser Slussen</a>.
+                    	</p>
+						<p>
+							Contact: <a href="mailto:kk@mycoffeespoon.com">kk@mycoffeespoon.com</a>
+						</p>
+					</section>
+				</div>
+			</section>
 			
 		</div>
 	</div>
@@ -40,7 +96,6 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	<script>!window.jQuery && document.write('<script src="js/lib/jquery/jquery-1.4.2.min.js"><\/script>')</script>
 	<script src="js/lib/jquery/jquery.address-1.2.1.min.js"></script>
-	<script src="js/lib/jquery/jquery.hoverIntent.min.js"></script>
 	<script src="js/cp.js"></script>
 </body>
 </html>

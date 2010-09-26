@@ -18,7 +18,7 @@ fieldset, img { border: none; }
 body
 {
 	background: #141516 url(../images/body_bg_repeat.png) repeat left top;
-	color: #eae4d5;
+	color: #e8ddc3;
 	font-family: 'KingthingsTrypewriterRegular', helvetica, arial sans-serif;
 	font-size: 14px;
 }
@@ -109,7 +109,8 @@ header
 
 	#content-frame
 	{
-		background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 320, from(rgba(255, 255, 255, 0.07)), to(rgba(255, 255, 255, 0.01)));
+		background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 320, from(rgba(255, 255, 255, 0.07)), to(rgba(255, 255, 255, 0.01)));
+		background-image: -moz-radial-gradient(center 45deg, circle closest-side, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.01) 100%);
 		border: 1px solid #000;
 		-moz-border-radius: 6px;
 		-webkit-border-radius: 6px;
@@ -124,16 +125,22 @@ header
 		-webkit-transition: height 0.3s ease-out;
 	}
 	
-		#content-frame:hover a
+		#content-frame:hover #slideshow a
 		{
 			opacity: 0.2;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
 		}
 	
-	#content-frame img
+	#content-frame #slideshow img
 	{
 		border-bottom: 1px solid #000;
 		border-right: 1px solid #000;
 		margin: 0 auto;
+	}
+	
+	#slideshow
+	{
+		display: none;
 	}
 
 /*- Prev/Next Buttons --------------------------------------------------------------------------------*/
@@ -154,14 +161,17 @@ header
 		z-index: 998;
 	}
 	
-	#content-frame a
+	#content-frame #slideshow a
 	{
 		background-color: rgba(0, 0, 0, 0.6);
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		color: #fff;
 		font-size: 22px;
 		height: 98.5%;
 		line-height: 17em;
 		opacity: 0;
 		position: absolute;
+		text-decoration: none;
 		top: 6px;
 		width: 18%;
 		text-shadow: #000 1px 1px 1px;
@@ -169,10 +179,16 @@ header
 		z-index: 999;
 	}
 	
-		#content-frame a:hover
+		html.ie8 #content-frame #slideshow a
+		{
+			background-color: #000;
+		}
+	
+		#content-frame #slideshow a:hover
 		{
 			cursor: pointer;
 			opacity: 0.8;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 		}
 		
 	#prev-btn
@@ -191,3 +207,113 @@ header
 {
 	display: none;
 }
+
+/*- About --------------------------------------------------------------------------------------------*/
+
+#about 
+{
+	overflow: hidden;
+	display: none;
+	padding: 12px 0;
+	text-align: left;
+}
+
+	#about a
+	{
+		color: #fff;
+	}
+	
+		#about a:hover
+		{
+			text-decoration: none;
+		}
+
+/*- About Photo --------------------------------------------------------------------------------------*/
+
+#about-photo
+{
+	float: left;
+	padding-left: 8px;
+	width: 48%;
+}
+
+	#about img
+	{
+		border-bottom: 1px solid #000;
+		border-right: 1px solid #000;
+		-moz-transform: rotate(-0.5deg);
+		-webkit-transform: rotate(-0.5deg);
+		transform: rotate(-0.5deg);
+	}
+	
+/*- About Credits ------------------------------------------------------------------------------------*/
+
+#credits
+{
+	font-size: 11px;
+	opacity: 0.9;
+	padding-top: 4px;
+	width: 42%;
+}
+
+	#credits li:first-child
+	{
+		float: left;
+	}
+	
+	#credits li
+	{
+		clear: right;
+		float: right;
+	}
+
+/*- About Content-------------------------------------------------------------------------------------*/
+	
+#about-content
+{
+	float: right;
+	padding-right: 16px;
+	text-shadow: #000 1px 1px 1px;
+	width: 418px;
+}
+
+/*- About Quotes -------------------------------------------------------------------------------------*/
+	
+	#quotes blockquote
+	{
+		background: transparent url(../images/quotes_bg.png) no-repeat center top;
+		clear: both;
+		display: block;
+		overflow: hidden;
+		padding: 0px 28px 30px 28px;
+	}
+	
+	#quotes p
+	{
+		clear: both;
+		font-size: 12px;
+		padding: 2px 0 4px 0;
+	}
+	
+		#quotes em
+		{
+			display: block;
+			font-size: 11px;
+			float: right;
+			font-style: normal;
+			opacity: 0.8;
+		}
+	
+/*- About Bio ----------------------------------------------------------------------------------------*/
+
+	#bio
+	{
+		background: transparent url(../images/bio_detail.png) no-repeat center top;
+		padding-top: 26px;
+	}
+	
+	#bio p
+	{
+		padding-bottom: 20px;
+		opacity: 0.9;
+	}

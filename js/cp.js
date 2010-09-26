@@ -29,8 +29,8 @@ var CP = function ()
 						klass = 'last-photo-set-link';
 					}
 					
-					html.push('<li class="' + klass + '"><a href="#' + set.name + '"');
-					html.push(' rel="' + set.name + '">');
+					html.push('<li class="' + klass + '"><a href="#' + set.name + '/1"');
+					html.push(' rel="' + set.name + '/1">');
 					html.push(set.name + '</a></li>');
 				}
 			);
@@ -41,7 +41,7 @@ var CP = function ()
 		
 		setActive: function (itemName)
 		{
-			var parent = $('a[rel="' + itemName + '"]').parent();
+			var parent = $('a[rel*="' + itemName + '"]').parent();
 			parent.addClass('active').siblings().removeClass('active');
 		}
 	};
@@ -55,7 +55,7 @@ var CP = function ()
 			// Bind the address change event to our load page
 			$.address.change(
 				function (e)
-				{			
+				{	
 					changeWasCalled = true;
 					internal.navigation.setActive(e.pathNames[0]);
 					internal.loadSection(e);
@@ -73,17 +73,19 @@ var CP = function ()
 					{
 						return $(this).attr('rel');
 					}
+					else
+					{
+						return true;
+					}
 				}
 			);
 			
 			// When initialy loaded, or loaded without a specific URL 
 			// we need to direct it to the correct page
-			/*
 			if ($.address.value() === '/')
 			{
-				$.address.value('/foobar');
+				$.address.value($('header:eq(0) ul li:first a').attr('rel'));
 			}
-			*/
 
 			// We were having trouble with the address change() event not firing
 			// when refreshing the page, or navigating straight to a hashed page
@@ -103,14 +105,18 @@ var CP = function ()
 			container   = null,
 			imgHtml     = [];
 		
-		if (sectionName)
+		if (sectionName !== 'about')
 		{
+			$('#about').hide();
+			
 			photoSet = photos[sectionName];
 			internal.slideshow.enabled = true;
-			internal.slideshow.index   = 0;
+			internal.slideshow.index   = 0 || (sectionInfo.pathNames[1] - 1);
 			internal.slideshow.set     = sectionName;
 			
-			// Create a hidden container for the images
+			// Create a hidden container for the images if it's not already there
+			// we're doing this to "preload" the images
+			// NOTE: I'm not sure if this works or not?
 			if ($('#container-' + sectionName).length === 0)
 			{
 				container = $('<div />', {
@@ -134,7 +140,9 @@ var CP = function ()
 		}
 		else
 		{
-			
+			$('#slideshow').hide();
+			$('#about').fadeIn(300);
+			internal.loader.hide();
 		}
 	};
 	
@@ -160,7 +168,6 @@ var CP = function ()
 		init: function ()
 		{
 			var slideshow = this;
-			this.controls.init();
 			
 			$(document).keyup(
 				function (e)
@@ -168,10 +175,10 @@ var CP = function ()
 					switch (e.keyCode)
 					{
 					case 37:
-						slideshow.prev();
+						$('#prev-btn').click();
 						break;
 					case 39:
-						slideshow.next();
+						$('#next-btn').click();
 						break;
 					};
 				}
@@ -188,73 +195,44 @@ var CP = function ()
 				{
 					$(this).attr('src', img);
 					internal.loader.hide();
+					$('#slideshow').show();
 				}
 			).animate({opacity: 1}, 200);
+			
+			this.updateControls();
 		},
 		
-		next: function ()
+		// Update the href/rel attributes of the prev/next buttons
+		updateControls: function ()
 		{
-			var newIndex;
+			var prev = 0,
+				next = 0,
+				prevAttr = '',
+				nextAttr = '';
 			
-			if (this.enabled)
+			if (this.index === 0)
 			{
-				internal.loader.show();
-				
-				if (this.index === photos[this.set].length - 1)
-				{
-					newIndex = 0;
-				}
-				else
-				{
-					newIndex = this.index + 1;
-				}
-            	
-				this.index = newIndex;
-				this.change();
+				prev = photos[this.set].length - 1;
 			}
-			return false;
-		},
-		
-		prev: function ()
-		{
-			var newIndex;
-			
-			if (this.enabled)
+			else
 			{
-				internal.loader.show();
-				
-				if (this.index === 0)
-				{
-					newIndex = photos[this.set].length - 1;
-				}
-				else
-				{
-					newIndex = this.index - 1;
-				}
-				
-				this.index = newIndex;
-				this.change();
+				prev = this.index - 1;
 			}
-			return false;
-		},
-		
-		controls: {
 			
-			init: function ()
+			if (this.index === photos[this.set].length - 1)
 			{
-				$('#prev-btn').click($.proxy(internal.slideshow, 'prev'));
-				$('#next-btn').click($.proxy(internal.slideshow, 'next'));
-			},
-			
-			hide: function ()
-			{
-				$('#transport-controls').hide();
-			},
-			
-			show: function ()
-			{
-				$('#transport-controls').show();
+				next = 0;
 			}
+			else
+			{
+				next = this.index + 1;
+			}
+			
+			prevAttr = '/' + this.set + '/' + (prev + 1);
+			nextAttr = '/' + this.set + '/' + (next + 1);
+			
+			$('#prev-btn').attr('href', prevAttr).attr('rel', prevAttr);
+			$('#next-btn').attr('href', nextAttr).attr('rel', nextAttr);
 		}
 	}
 	
@@ -319,7 +297,7 @@ var CP = function ()
 	};
 	
 	// Base URL for all API data
-	this.apiBaseUrl = 'http://mycoffeespoon/api/';
+	this.apiBaseUrl = '/api/';
 	
 	// Retrieve an absolute URL to an API resource
 	// @param STRING urlName - The name of the resourse
