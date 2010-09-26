@@ -2,167 +2,247 @@
     "photos": [
         {
             "set": "childhood",
-            "url": "photos/ch-001.jpg"
+            "url": "photos/childhood/001.jpg"
         },
         {
             "set": "childhood",
-            "url": "photos/ch-002.jpg"
+            "url": "photos/childhood/002.jpg"
         },
         {
             "set": "childhood",
-            "url": "photos/ch-003.jpg"
+            "url": "photos/childhood/003.jpg"
         },
 		{
             "set": "childhood",
-            "url": "photos/ch-004.jpg"
+            "url": "photos/childhood/004.jpg"
         },
         {
             "set": "childhood",
-            "url": "photos/ch-005.jpg"
+            "url": "photos/childhood/005.jpg"
         },
         {
             "set": "childhood",
-            "url": "photos/ch-006.jpg"
+            "url": "photos/childhood/006.jpg"
         },
 		{
             "set": "childhood",
-            "url": "photos/ch-007.jpg"
+            "url": "photos/childhood/007.jpg"
         },
         {
             "set": "childhood",
-            "url": "photos/ch-008.jpg"
+            "url": "photos/childhood/008.jpg"
         },
         {
             "set": "childhood",
-            "url": "photos/ch-009.jpg"
+            "url": "photos/childhood/009.jpg"
         },
 		{
             "set": "childhood",
-            "url": "photos/ch-010.jpg"
+            "url": "photos/childhood/010.jpg"
         },
         {
             "set": "childhood",
-            "url": "photos/ch-011.jpg"
+            "url": "photos/childhood/011.jpg"
         },
         {
             "set": "childhood",
-            "url": "photos/ch-012.jpg"
+            "url": "photos/childhood/012.jpg"
         },
 		{
             "set": "childhood",
-            "url": "photos/ch-013.jpg"
+            "url": "photos/childhood/013.jpg"
         },
         {
             "set": "childhood",
-            "url": "photos/ch-014.jpg"
+            "url": "photos/childhood/014.jpg"
         },
         {
             "set": "music",
-            "url": "photos/mu-001.jpg"
+            "url": "photos/music/001.jpg"
         },
 		{
             "set": "music",
-            "url": "photos/mu-002.jpg"
+            "url": "photos/music/002.jpg"
         },
 		{
             "set": "music",
-            "url": "photos/mu-003.jpg"
+            "url": "photos/music/003.jpg"
         },
 		{
             "set": "music",
-            "url": "photos/mu-004.jpg"
+            "url": "photos/music/004.jpg"
         },
 		{
             "set": "music",
-            "url": "photos/mu-005.jpg"
+            "url": "photos/music/005.jpg"
         },
 		{
             "set": "music",
-            "url": "photos/mu-006.jpg"
+            "url": "photos/music/006.jpg"
         },
 		{
             "set": "music",
-            "url": "photos/mu-007.jpg"
+            "url": "photos/music/007.jpg"
         },
 		{
             "set": "music",
-            "url": "photos/mu-008.jpg"
+            "url": "photos/music/008.jpg"
         },
 		{
             "set": "music",
-            "url": "photos/mu-009.jpg"
+            "url": "photos/music/009.jpg"
         },
 		{
             "set": "music",
-            "url": "photos/mu-010.jpg"
+            "url": "photos/music/010.jpg"
         },
 		{
             "set": "music",
-            "url": "photos/mu-011.jpg"
+            "url": "photos/music/011.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-001.jpg"
+            "set": "music",
+            "url": "photos/music/012.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-002.jpg"
+            "set": "music",
+            "url": "photos/music/013.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-003.jpg"
+            "set": "music",
+            "url": "photos/music/014.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-004.jpg"
+            "set": "music",
+            "url": "photos/music/015.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-005.jpg"
+            "set": "people",
+            "url": "photos/people/001.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-006.jpg"
+            "set": "people",
+            "url": "photos/people/002.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-007.jpg"
+            "set": "people",
+            "url": "photos/people/003.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-008.jpg"
+            "set": "people",
+            "url": "photos/people/004.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-009.jpg"
+            "set": "people",
+            "url": "photos/people/005.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-010.jpg"
+            "set": "people",
+            "url": "photos/people/006.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-011.jpg"
+            "set": "people",
+            "url": "photos/people/007.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-012.jpg"
+            "set": "people",
+            "url": "photos/people/008.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-013.jpg"
+            "set": "people",
+            "url": "photos/people/009.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-014.jpg"
+            "set": "people",
+            "url": "photos/people/010.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-015.jpg"
+            "set": "people",
+            "url": "photos/people/011.jpg"
         },
 		{
-            "set": "portraits",
-            "url": "photos/po-016.jpg"
+            "set": "people",
+            "url": "photos/people/012.jpg"
+        },
+		{
+            "set": "people",
+            "url": "photos/people/013.jpg"
+        },
+		{
+            "set": "people",
+            "url": "photos/people/014.jpg"
+        },
+		{
+            "set": "people",
+            "url": "photos/people/015.jpg"
+        },
+		{
+            "set": "people",
+            "url": "photos/people/016.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/001.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/002.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/003.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/004.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/005.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/006.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/007.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/008.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/009.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/010.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/011.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/012.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/013.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/014.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/015.jpg"
+        },
+		{
+            "set": "travel",
+            "url": "photos/travel/016.jpg"
         }
     ]
 }
