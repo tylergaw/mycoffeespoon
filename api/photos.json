@@ -100,10 +100,10 @@
             "set": "music",
             "url": "photos/music/014.jpg" 
         },
-        {
+		{
             "order": "9",
             "set": "music",
-            "url": "photos/music/012.jpg" 
+            "url": "photos/music/017.jpg" 
         },
         {
             "order": "10",
@@ -125,13 +125,18 @@
             "set": "music",
             "url": "photos/music/009.jpg" 
         },
-        {
+		{
             "order": "14",
+            "set": "music",
+            "url": "photos/music/012.jpg" 
+        },
+        {
+            "order": "15",
             "set": "music",
             "url": "photos/music/016.jpg" 
         },
         {
-            "order": "15",
+            "order": "16",
             "set": "music",
             "url": "photos/music/004.jpg" 
         },
