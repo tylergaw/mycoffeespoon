@@ -187,7 +187,7 @@ var CP = function ()
 		
 		change: function ()
 		{
-			var img = photos[this.set][this.index];
+			var img = photos[this.set][this.index].url;
 			internal.loader.show();
 			
 			$('#slideshow-image').animate({opacity: 0}, 200, 
@@ -275,18 +275,18 @@ var CP = function ()
 				{
 					if (prevSet !== null)
 					{
-						org[prevSet].sort();
+						org[prevSet].sort($this.sortByOrder);
 					}
 					
 					org[p.set] = [];
 				}
 				
-				org[p.set].push(p.url);
+				org[p.set].push(p);
 				
 				// Sort the last set on the way out
 				if (i === sorted.length - 1)
 				{
-					org[p.set].sort();
+					org[p.set].sort($this.sortByOrder);
 				}
 				
 				prevSet = p.set;
@@ -317,7 +317,7 @@ var CP = function ()
 		this.loadData(this.url('sets'),
 			function (data)
 			{
-				sets = data.sets;
+				sets = data.sets.sort($this.sortByOrder);
 				
 				$this.loadData($this.url('photos'),
 					function (data)
@@ -351,6 +351,14 @@ var CP = function ()
 				onComplete(data);
 			}
 		});
+	};
+	
+	this.sortByOrder = function (a, b)
+	{
+		var oA = a.order,
+			oB = b.order;
+		
+		return oA - oB;
 	};
 	
 	this.init();

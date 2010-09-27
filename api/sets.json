@@ -1,16 +1,20 @@
 {
     "sets": [
         {
-            "name": "childhood"
+            "name": "childhood",
+			"order": "4"
         },
         {
-            "name": "music"
+            "name": "music",
+			"order": "1"
         },
         {
-            "name": "people"
+            "name": "people",
+			"order": "2"
         },
         {
-            "name": "travel"
+            "name": "travel",
+			"order": "3"
         }
     ]
 }
