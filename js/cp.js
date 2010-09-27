@@ -115,22 +115,20 @@ var CP = function ()
 			internal.slideshow.set     = sectionName;
 			
 			// Create a hidden container for the images if it's not already there
-			// we're doing this to "preload" the images
-			// NOTE: I'm not sure if this works or not?
 			if ($('#container-' + sectionName).length === 0)
 			{
 				container = $('<div />', {
-					'class': 'hidden-photo-container',
+					'class': 'photo-container',
 					'id': 'container-' + sectionName,
 				});
 
-				$('body').append(container);
+				$('#slideshow').append(container);
 
 				// Append an image element for each photo in the set
 				$.each(photoSet, 
 					function (i, photo)
 					{
-						imgHtml.push('<img src="' + photo + '">');
+						imgHtml.push('\n<img style="display:none;" src="' + photo.url + '">');
 					}
 				);
 				container.append(imgHtml.join(''));
@@ -190,14 +188,29 @@ var CP = function ()
 			var img = photos[this.set][this.index].url;
 			internal.loader.show();
 			
-			$('#slideshow-image').animate({opacity: 0}, 200, 
+			$('#slideshow').fadeOut(200, 
 				function ()
 				{
-					$(this).attr('src', img);
-					internal.loader.hide();
-					$('#slideshow').show();
+					$.each($('#slideshow img'), 
+						function (i, image)
+						{
+							if ($(this).attr('src') === img)
+							{
+								$(this).show();
+							}
+							else
+							{
+								$(this).hide();
+							}
+						}
+					);
+					
+					$(this).fadeIn(200, function ()
+					{
+						internal.loader.hide();
+					});
 				}
-			).animate({opacity: 1}, 200);
+			);
 			
 			this.updateControls();
 		},
