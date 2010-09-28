@@ -111,7 +111,19 @@ var CP = function ()
 			
 			photoSet = photos[sectionName];
 			internal.slideshow.enabled = true;
-			internal.slideshow.index   = 0 || (sectionInfo.pathNames[1] - 1);
+			
+			// Check if the image number is undefined
+			// This allows a URL to go just to a category and display the first image
+			// Example url.com/#/categoryName
+			if (sectionInfo.pathNames[1] !== undefined)
+			{
+				internal.slideshow.index = sectionInfo.pathNames[1] - 1;
+			}
+			else
+			{
+				internal.slideshow.index = 0;
+			}
+			
 			internal.slideshow.set     = sectionName;
 			
 			// Create a hidden container for the images if it's not already there
