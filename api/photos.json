@@ -25,38 +25,43 @@
             "set": "childhood",
             "url": "photos/childhood/013.jpg" 
         },
-        {
+		{
             "order": "6",
             "set": "childhood",
-            "url": "photos/childhood/012.jpg" 
+            "url": "photos/childhood/015.jpg" 
         },
         {
             "order": "7",
             "set": "childhood",
-            "url": "photos/childhood/006.jpg" 
+            "url": "photos/childhood/012.jpg" 
         },
         {
             "order": "8",
             "set": "childhood",
-            "url": "photos/childhood/004.jpg" 
+            "url": "photos/childhood/006.jpg" 
         },
         {
             "order": "9",
             "set": "childhood",
-            "url": "photos/childhood/008.jpg" 
+            "url": "photos/childhood/004.jpg" 
         },
         {
             "order": "10",
             "set": "childhood",
-            "url": "photos/childhood/014.jpg" 
+            "url": "photos/childhood/008.jpg" 
         },
         {
             "order": "11",
             "set": "childhood",
-            "url": "photos/childhood/007.jpg" 
+            "url": "photos/childhood/014.jpg" 
         },
         {
             "order": "12",
+            "set": "childhood",
+            "url": "photos/childhood/007.jpg" 
+        },
+        {
+            "order": "13",
             "set": "childhood",
             "url": "photos/childhood/009.jpg" 
         },
