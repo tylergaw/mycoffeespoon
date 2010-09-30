@@ -10,7 +10,7 @@ fieldset, img { border: none; }
 {
 	font-family: 'KingthingsTrypewriterRegular';
 	src: url('fonts/Kingthings_Trypewriter-webfont.eot');
-	src: local('☺'), url('fonts/Kingthings_Trypewriter-webfont.woff') format('woff'), url('fonts/Kingthings_Trypewriter-webfont.ttf') format('truetype'), url('fonts/Kingthings_Trypewriter-webfont.svg#webfonthYUejtqM') format('svg');
+	src: local(''), url('fonts/Kingthings_Trypewriter-webfont.woff') format('woff'), url('fonts/Kingthings_Trypewriter-webfont.ttf') format('truetype'), url('fonts/Kingthings_Trypewriter-webfont.svg#webfonthYUejtqM') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
