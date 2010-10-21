@@ -65,6 +65,9 @@
             "set": "childhood",
             "url": "photos/childhood/009.jpg" 
         },
+
+
+
         {
             "order": "1",
             "set": "music",
@@ -155,73 +158,84 @@
             "set": "people",
             "url": "photos/people/005.jpg" 
         },
-        {
+		{
             "order": "3",
             "set": "people",
-            "url": "photos/people/011.jpg" 
+            "url": "photos/people/020.jpg" 
         },
         {
             "order": "4",
             "set": "people",
-            "url": "photos/people/017.jpg" 
+            "url": "photos/people/011.jpg" 
         },
         {
             "order": "5",
             "set": "people",
-            "url": "photos/people/004.jpg" 
+            "url": "photos/people/017.jpg" 
         },
         {
             "order": "6",
             "set": "people",
-            "url": "photos/people/008.jpg" 
+            "url": "photos/people/004.jpg" 
         },
         {
             "order": "7",
             "set": "people",
-            "url": "photos/people/010.jpg" 
+            "url": "photos/people/008.jpg" 
         },
         {
             "order": "8",
             "set": "people",
-            "url": "photos/people/016.jpg" 
+            "url": "photos/people/010.jpg" 
         },
-        {
+
+		{
             "order": "9",
             "set": "people",
-            "url": "photos/people/006.jpg" 
+            "url": "photos/people/021.jpg" 
         },
         {
             "order": "10",
             "set": "people",
-            "url": "photos/people/001.jpg" 
+            "url": "photos/people/006.jpg" 
         },
         {
             "order": "11",
             "set": "people",
-            "url": "photos/people/013.jpg" 
+            "url": "photos/people/001.jpg" 
         },
-        {
+		{
             "order": "12",
             "set": "people",
-            "url": "photos/people/012.jpg" 
+            "url": "photos/people/018.jpg" 
         },
         {
             "order": "13",
             "set": "people",
-            "url": "photos/people/015.jpg" 
+            "url": "photos/people/013.jpg" 
         },
         {
             "order": "14",
             "set": "people",
-            "url": "photos/people/002.jpg" 
+            "url": "photos/people/012.jpg" 
+        },
+		{
+            "order": "15",
+            "set": "people",
+            "url": "photos/people/019.jpg" 
         },
         {
-            "order": "15",
+            "order": "16",
+            "set": "people",
+            "url": "photos/people/015.jpg" 
+        },
+        {
+            "order": "17",
             "set": "people",
             "url": "photos/people/007.jpg" 
         },
         {
-            "order": "16",
+            "order": "18",
             "set": "people",
             "url": "photos/people/003.jpg" 
         },
@@ -260,43 +274,53 @@
             "set": "travel",
             "url": "photos/travel/011.jpg" 
         },
-        {
+		{
             "order": "8",
             "set": "travel",
-            "url": "photos/travel/014.jpg" 
+            "url": "photos/travel/017.jpg" 
         },
         {
             "order": "9",
             "set": "travel",
-            "url": "photos/travel/001.jpg" 
+            "url": "photos/travel/014.jpg" 
         },
         {
             "order": "10",
             "set": "travel",
-            "url": "photos/travel/007.jpg" 
+            "url": "photos/travel/001.jpg" 
         },
         {
             "order": "11",
             "set": "travel",
-            "url": "photos/travel/012.jpg" 
+            "url": "photos/travel/007.jpg" 
         },
         {
             "order": "12",
             "set": "travel",
-            "url": "photos/travel/005.jpg" 
+            "url": "photos/travel/012.jpg" 
         },
         {
             "order": "13",
             "set": "travel",
+            "url": "photos/travel/005.jpg" 
+        },
+		{
+            "order": "14",
+            "set": "travel",
+            "url": "photos/travel/018.jpg" 
+        },
+        {
+            "order": "15",
+            "set": "travel",
             "url": "photos/travel/016.jpg" 
         },
         {
-            "order": "14",
+            "order": "16",
             "set": "travel",
             "url": "photos/travel/015.jpg" 
         },
         {
-            "order": "15",
+            "order": "17",
             "set": "travel",
             "url": "photos/travel/009.jpg" 
         } 

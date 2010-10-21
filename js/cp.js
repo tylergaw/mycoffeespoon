@@ -156,6 +156,18 @@ var CP = function ()
 		}
 	};
 	
+	// Appends the user's token to a URL, if present. If not a random string is appended
+	// @param STRING url
+	// @return STRING
+	internal.noCacheUrl = function (url)
+	{
+		var marks = url.match(/\?/),
+			delim = (marks && marks.length && marks.length > 0) ? "&" : "?",
+			value = (new Date()).getTime() + Math.random();
+		
+		return url + delim + value;
+    };
+	
 	// spinning loader graphic
 	internal.loader = {
 		show: function ()
@@ -325,7 +337,7 @@ var CP = function ()
 	this.apiBaseUrl = 'api/';
 	
 	// Retrieve an absolute URL to an API resource
-	// @param STRING urlName - The name of the resourse
+	// @param STRING resource - The name of the resourse
 	// @return STRING - The url
 	this.url = function (resource)
 	{	
@@ -334,7 +346,7 @@ var CP = function ()
 				'photos': 'photos.json'
 			};
 		
-		return this.apiBaseUrl + urls[resource];
+		return internal.noCacheUrl(this.apiBaseUrl + urls[resource]);
 	};
 	
 	this.init = function ()
